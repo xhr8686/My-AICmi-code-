@@ -1,4 +1,4 @@
-# My Paper Code
+# My AICmi Code
 
 This repository contains the code used for my paper: AI-Driven and CRISPR Screening-Assisted miRNA (AICmi) Target Discovery with Tetrahedron DNA Framework for Synergistic Therapy in Pancreatic Cancer.
 In this project, we focus on integrating artificial intelligence with CRISPR screening to identify miRNA targets for pancreatic cancer therapy, utilizing a tetrahedral DNA framework for drug delivery.
