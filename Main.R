@@ -169,7 +169,7 @@ xgb.plot.importance(impMatrix, main = "Gain by Feature")
 # The 69 DEmiRNAs and clinical data were input for a GBM training.
 library("gbm")
 train<-newcombine
-set.seed(1)
+set.seed(201)
 gbm_model <- gbm(Surv(time, status) ~ .,
              distribution = "coxph",
              data = train,
@@ -239,5 +239,6 @@ pheatmap(
     show_rownames = FALSE,        
     main = "K-means Clustering Heatmap"
 )
+
 
 
