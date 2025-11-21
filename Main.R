@@ -1,6 +1,8 @@
 # TCGA-PAAD mRNA, miRNA and clinical data were downloaded by gdc-client and from TCGA website. After pre-processing the downloaded data, we obtained exprmiRNA.Rdata as the miRNA data.
 
 exprmiRNA<-read.csv('exprmiRNA.csv')
+rownames(exprmiRNA)<-exprmiRNA[,1]
+exprmiRNA<-exprmiRNA[,-1]
 tumor<-exprmiRNA[,substr(colnames(exprmiRNA),14,14)=='0']
 normal<-exprmiRNA[,substr(colnames(exprmiRNA),14,14)=='1']
 dim(tumor)
@@ -25,7 +27,7 @@ fit2 <- contrasts.fit(fit,contrast.matrix)
 fit2 <- eBayes(fit2)	
 tempOutput <- topTable(fit2, coef =1, n = Inf)
 nrDEG = na.omit(tempOutput)
-save(nrDEG,file=’nrDEG.Rdata’)
+save(nrDEG,file='nrDEG.Rdata')
 nrDEGsig<-nrDEG[abs(nrDEG[,1])>1&nrDEG[,4]<0.05,]
 write.csv(nrDEGsig,file='nrDEGsig.csv')
 
@@ -239,6 +241,7 @@ pheatmap(
     show_rownames = FALSE,        
     main = "K-means Clustering Heatmap"
 )
+
 
 
 
