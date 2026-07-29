@@ -171,7 +171,7 @@ xgb.plot.importance(impMatrix, main = "Gain by Feature")
 # The 69 DEmiRNAs and clinical data were input for a GBM training.
 library("gbm")
 train<-newcombine
-set.seed(201)
+set.seed(20250113)
 gbm_model <- gbm(Surv(time, status) ~ .,
              distribution = "coxph",
              data = train,
